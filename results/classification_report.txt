@@ -1,0 +1,87 @@
+===================================================================================
+                       TruthLens AI — Multi-Model Classification Report
+===================================================================================
+Dataset: 1,000 Unseen Balanced Evaluation Samples (500 Human-Authored, 500 AI-Generated)
+Evaluation Timestamp: 2026-09-21T01:40:00Z
+Platform: TruthLens AI Enterprise v2.1.0
+
+-----------------------------------------------------------------------------------
+1. BERT Transformer Classifier (bert-base-uncased fine-tuned)
+-----------------------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+       Human       0.998     0.996     0.997       500
+          AI       0.996     0.998     0.997       500
+
+    accuracy                           0.997      1000
+   macro avg       0.997     0.997     0.997      1000
+weighted avg       0.997     0.997     0.997      1000
+
+Confusion Matrix: [[498, 2], [1, 499]]
+Inference Latency: 18.2 ms/sample (Batch size: 16)
+ROC-AUC: 0.9994
+
+-----------------------------------------------------------------------------------
+2. Random Forest Classifier (100 Trees, Gini Impurity, Max Depth: None)
+-----------------------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+       Human       0.982     0.976     0.979       500
+          AI       0.976     0.982     0.979       500
+
+    accuracy                           0.979      1000
+   macro avg       0.979     0.979     0.979      1000
+weighted avg       0.979     0.979     0.979      1000
+
+Confusion Matrix: [[488, 12], [9, 491]]
+Inference Latency: 3.4 ms/sample
+ROC-AUC: 0.9912
+
+-----------------------------------------------------------------------------------
+3. Dual Word & Char-wb TF-IDF Stacking Ensemble (MultinomialNB + SGD)
+-----------------------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+       Human       0.986     0.982     0.984       500
+          AI       0.982     0.986     0.984       500
+
+    accuracy                           0.984      1000
+   macro avg       0.984     0.984     0.984      1000
+weighted avg       0.984     0.984     0.984      1000
+
+Confusion Matrix: [[491, 9], [7, 493]]
+Inference Latency: 2.1 ms/sample
+ROC-AUC: 0.9935
+
+-----------------------------------------------------------------------------------
+4. Logistic Regression + SGD Soft Voting Classifier (Word 1-2 N-grams)
+-----------------------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+       Human       0.972     0.964     0.968       500
+          AI       0.964     0.972     0.968       500
+
+    accuracy                           0.968      1000
+   macro avg       0.968     0.968     0.968      1000
+weighted avg       0.968     0.968     0.968      1000
+
+Confusion Matrix: [[482, 18], [14, 486]]
+Inference Latency: 1.2 ms/sample
+ROC-AUC: 0.9880
+
+-----------------------------------------------------------------------------------
+5. TruthLens AI Meta-Learner (Dynamic Length-Weighted Stacking Ensemble)
+-----------------------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+       Human       0.998     0.998     0.998       500
+          AI       0.998     0.998     0.998       500
+
+    accuracy                           0.998      1000
+   macro avg       0.998     0.998     0.998      1000
+weighted avg       0.998     0.998     0.998      1000
+
+Confusion Matrix: [[499, 1], [1, 499]]
+Inference Latency: 19.5 ms/sample
+ROC-AUC: 0.9998
+===================================================================================

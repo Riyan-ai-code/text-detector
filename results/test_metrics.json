@@ -1,0 +1,8 @@
+{
+  "eval_loss": 0.0211,
+  "eval_accuracy": 0.966,
+  "eval_precision": 0.9498000000000001,
+  "eval_recall": 0.9840000000000001,
+  "eval_f1": 0.9666,
+  "roc_auc": 0.996
+}

@@ -1,0 +1,58 @@
+# Environment variables
+.env
+*.env
+
+# Databases
+*.db
+truthlens.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Testing & Notebooks
+.pytest_cache/
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# Large Model weights, checkpoints and caches
+*.pt
+*.pth
+*.bin
+*.keras
+*.h5
+*.safetensors
+*.onnx
+model/bert_ai_detector/
+model/checkpoints/
+checkpoint-*/
+**/checkpoint-*/
+model/saved_models/
+saved_model/

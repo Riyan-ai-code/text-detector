@@ -1,0 +1,275 @@
+{
+  "test_samples_evaluated": 1000,
+  "primary_metrics": {
+    "accuracy": 96.6,
+    "precision": 94.98,
+    "recall": 98.4,
+    "f1_score": 96.66,
+    "specificity": 94.8,
+    "roc_auc": 0.996,
+    "confusion_matrix": {
+      "matrix": [
+        [
+          474,
+          26
+        ],
+        [
+          8,
+          492
+        ]
+      ],
+      "tn": 474,
+      "fp": 26,
+      "fn": 8,
+      "tp": 492,
+      "total": 1000
+    }
+  },
+  "roc_curve": {
+    "auc": 0.996,
+    "points": [
+      {
+        "fpr": 0.0,
+        "tpr": 0.0,
+        "threshold": Infinity,
+        "chance": 0.0
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.424,
+        "threshold": 0.9449,
+        "chance": 0.0
+      },
+      {
+        "fpr": 0.002,
+        "tpr": 0.83,
+        "threshold": 0.768,
+        "chance": 0.002
+      },
+      {
+        "fpr": 0.004,
+        "tpr": 0.908,
+        "threshold": 0.6606,
+        "chance": 0.004
+      },
+      {
+        "fpr": 0.006,
+        "tpr": 0.932,
+        "threshold": 0.631,
+        "chance": 0.006
+      },
+      {
+        "fpr": 0.01,
+        "tpr": 0.938,
+        "threshold": 0.6121,
+        "chance": 0.01
+      },
+      {
+        "fpr": 0.012,
+        "tpr": 0.94,
+        "threshold": 0.6093,
+        "chance": 0.012
+      },
+      {
+        "fpr": 0.014,
+        "tpr": 0.95,
+        "threshold": 0.6023,
+        "chance": 0.014
+      },
+      {
+        "fpr": 0.016,
+        "tpr": 0.952,
+        "threshold": 0.5976,
+        "chance": 0.016
+      },
+      {
+        "fpr": 0.018,
+        "tpr": 0.958,
+        "threshold": 0.5891,
+        "chance": 0.018
+      },
+      {
+        "fpr": 0.02,
+        "tpr": 0.96,
+        "threshold": 0.5875,
+        "chance": 0.02
+      },
+      {
+        "fpr": 0.024,
+        "tpr": 0.962,
+        "threshold": 0.5787,
+        "chance": 0.024
+      },
+      {
+        "fpr": 0.036,
+        "tpr": 0.966,
+        "threshold": 0.5597,
+        "chance": 0.036
+      },
+      {
+        "fpr": 0.038,
+        "tpr": 0.97,
+        "threshold": 0.5561,
+        "chance": 0.038
+      },
+      {
+        "fpr": 0.04,
+        "tpr": 0.974,
+        "threshold": 0.5447,
+        "chance": 0.04
+      },
+      {
+        "fpr": 0.05,
+        "tpr": 0.978,
+        "threshold": 0.5201,
+        "chance": 0.05
+      },
+      {
+        "fpr": 0.052,
+        "tpr": 0.984,
+        "threshold": 0.5022,
+        "chance": 0.052
+      },
+      {
+        "fpr": 0.054,
+        "tpr": 0.986,
+        "threshold": 0.4947,
+        "chance": 0.054
+      },
+      {
+        "fpr": 0.058,
+        "tpr": 0.988,
+        "threshold": 0.4888,
+        "chance": 0.058
+      },
+      {
+        "fpr": 0.06,
+        "tpr": 0.99,
+        "threshold": 0.4842,
+        "chance": 0.06
+      },
+      {
+        "fpr": 0.072,
+        "tpr": 0.992,
+        "threshold": 0.4654,
+        "chance": 0.072
+      },
+      {
+        "fpr": 0.074,
+        "tpr": 0.994,
+        "threshold": 0.4575,
+        "chance": 0.074
+      },
+      {
+        "fpr": 0.092,
+        "tpr": 0.996,
+        "threshold": 0.4194,
+        "chance": 0.092
+      },
+      {
+        "fpr": 0.094,
+        "tpr": 0.998,
+        "threshold": 0.4058,
+        "chance": 0.094
+      },
+      {
+        "fpr": 1.0,
+        "tpr": 1.0,
+        "threshold": 0.0166,
+        "chance": 1.0
+      }
+    ]
+  },
+  "confusion_matrix_heatmap": {
+    "labels": [
+      "Human-Authored",
+      "AI-Generated"
+    ],
+    "matrix": [
+      [
+        474,
+        26
+      ],
+      [
+        8,
+        492
+      ]
+    ],
+    "breakdown": {
+      "true_negatives": {
+        "count": 474,
+        "label": "True Negatives (Human correctly identified)",
+        "pct": 47.4,
+        "type": "TN"
+      },
+      "false_positives": {
+        "count": 26,
+        "label": "False Positives (Human flagged as AI)",
+        "pct": 2.6,
+        "type": "FP"
+      },
+      "false_negatives": {
+        "count": 8,
+        "label": "False Negatives (AI missed as Human)",
+        "pct": 0.8,
+        "type": "FN"
+      },
+      "true_positives": {
+        "count": 492,
+        "label": "True Positives (AI correctly identified)",
+        "pct": 49.2,
+        "type": "TP"
+      }
+    }
+  },
+  "models_comparison": [
+    {
+      "id": "model_1",
+      "name": "Model 1: BERT Transformer",
+      "architecture": "Fine-Tuned bert-base-uncased",
+      "accuracy": 99.7,
+      "precision": 99.6,
+      "recall": 99.8,
+      "f1_score": 99.7,
+      "roc_auc": 0.9995,
+      "latency_ms": 38.5,
+      "best_for": "Deep contextual semantics & complex LLM essays"
+    },
+    {
+      "id": "model_2",
+      "name": "Model 2: Logistic Regression + SGD",
+      "architecture": "Word (1-2) TF-IDF + Soft Voting",
+      "accuracy": 87.1,
+      "precision": 80.97,
+      "recall": 97.0,
+      "f1_score": 88.26,
+      "roc_auc": 0.9743,
+      "latency_ms": 1.2,
+      "best_for": "Ultra-fast lexical n-gram pattern matching"
+    },
+    {
+      "id": "model_3",
+      "name": "Model 3: Dual TF-IDF Hybrid",
+      "architecture": "Word (1-2) & Char (3-4) + MNB/SGD",
+      "accuracy": 98.8,
+      "precision": 98.22,
+      "recall": 99.4,
+      "f1_score": 98.81,
+      "roc_auc": 0.9973,
+      "latency_ms": 2.8,
+      "best_for": "Subword character sequences & noisy adversarial bypasses"
+    },
+    {
+      "id": "ensemble",
+      "name": "Meta-Learner Stacked Ensemble",
+      "architecture": "Multi-Modal Stacking + Stylometrics",
+      "accuracy": 96.6,
+      "precision": 94.98,
+      "recall": 98.4,
+      "f1_score": 96.66,
+      "roc_auc": 0.996,
+      "latency_ms": 42.5,
+      "best_for": "Optimal production accuracy & explainability"
+    }
+  ]
+}

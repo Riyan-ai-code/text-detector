@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  # TruthLens AI - PostgreSQL with pgvector extension
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: truthlens-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-truthlens}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # TruthLens AI - FastAPI Multi-Model Backend
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: truthlens-backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-truthlens}
+      SECRET_KEY: ${SECRET_KEY:-truthlens_production_key_2026}
+      PORT: 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./model:/app/model
+      - ./dataset:/app/dataset
+
+  # TruthLens AI - Frontend Dashboard
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: truthlens-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_API_URL: http://backend:8000
+
+volumes:
+  postgres_data:
